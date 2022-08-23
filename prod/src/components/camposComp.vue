@@ -47,6 +47,7 @@ h5{
 }
 .form {
     text-align: center;
+
 }
 .text-register, b{
    color: rgb(163, 163, 163);

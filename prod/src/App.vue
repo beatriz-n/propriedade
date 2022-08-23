@@ -12,6 +12,7 @@
 >
 <CamposComp></CamposComp>
 </v-sheet>
+<BtnAdd></BtnAdd>
 <PlantioComp></PlantioComp>
 </v-sheet>
     </v-main>
@@ -21,13 +22,14 @@
 <script>
 import CamposComp from './components/camposComp.vue'
 import PlantioComp from './components/plantioComp.vue'
+import BtnAdd from './components/btnAdd.vue'
 
 export default {
   name: 'App',
-
   components: {
     CamposComp,
-    PlantioComp
+    PlantioComp,
+    BtnAdd
   },
 
   data: () => ({

@@ -1,15 +1,11 @@
 <template>
 <div>
-  <div class="btn-center">
-    <v-btn class="mx-1" fab dark v-on:click="propri">
-      <v-icon dark> mdi-plus </v-icon>
-      <p class="text-btn">propriedade</p>
-    </v-btn>
-    </div>
+  <form action="" @submit="checkform">
     <div class="input-group">
-      <input type="text" placeholder="Comprimento">
-      <input type="text" placeholder="Area">
-      <input type="text" placeholder="Largura">
+      <input v-model="comp" type="number" placeholder="Comprimento">
+      <input v-model="larg" type="number" placeholder="Largura">
+      {{larg}}
+
     </div>
     <div class="input-group">
       <input type="text" placeholder="Clone">
@@ -18,13 +14,28 @@
     </div>
      <div class="input-group">
       <input type="text" placeholder="Plantas dominadas">
+      <input type="text" placeholder="Nome">
     </div>
+    </form>
 </div>
 </template>
 
 <script>
+
 export default {
-  name: 'plantioComp'
+  name: 'plantioComp',
+  data () {
+    return {
+      comp: null,
+      larg: null,
+      area: null
+    }
+  },
+  methods: {
+    checkform () {
+      this.area = (this.comp + this.larg) / 2
+    }
+  }
 }
 </script>
 
@@ -38,7 +49,7 @@ export default {
   text-align: center;
 }
 .btn-center{
-    margin-left: 67%;
+    margin-left: 70.5%;
     margin-top: 1rem;
 }
 input{
@@ -53,5 +64,8 @@ input{
 }
 .input-group{
   margin-left: 3rem;
+}
+p{
+  color: black;
 }
 </style>
