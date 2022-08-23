@@ -7,14 +7,16 @@
     </div>
 </template>
 <script>
-import plantioComp from './plantioComp.vue'
+//  import plantioComp from './plantioComp.vue'
 
 export default {
   name: 'btnAdd',
   methods: {
     propri () {
-    //   alert('here')
-      return plantioComp
+      // this.input.push({
+      //   plantioComp
+      // })
+      this.$router.push({ path: 'plantioComp' })
     }
   }
 }
