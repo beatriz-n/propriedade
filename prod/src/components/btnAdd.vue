@@ -13,7 +13,7 @@ export default {
   name: 'btnAdd',
   methods: {
     propri () {
-    //   alert('aqui')
+    //   alert('here')
       return plantioComp
     }
   }

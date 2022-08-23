@@ -1,20 +1,19 @@
 <template>
 <div>
   <form action="" @submit="checkform">
-    <div class="input-group">
-      <input v-model="comp" type="number" placeholder="Comprimento">
-      <input v-model="larg" type="number" placeholder="Largura">
-      {{larg}}
-
+  <div class="input-group">
+      <input type="text" placeholder="Nome">
+      <input type="text" placeholder="Clone">
+      <input type="text" placeholder="Plantas dominadas">
     </div>
     <div class="input-group">
-      <input type="text" placeholder="Clone">
       <input type="text" placeholder="Plantas ativas">
       <input type="text" placeholder="Plantas inativas">
     </div>
-     <div class="input-group">
-      <input type="text" placeholder="Plantas dominadas">
-      <input type="text" placeholder="Nome">
+    <div class="input-group">
+      <input v-model.number="comp" type="number" placeholder="Comprimento">
+      <input v-model.number="larg" type="number" placeholder="Largura">
+      {{area}}
     </div>
     </form>
 </div>
@@ -34,6 +33,7 @@ export default {
   methods: {
     checkform () {
       this.area = (this.comp + this.larg) / 2
+      return this.area
     }
   }
 }
