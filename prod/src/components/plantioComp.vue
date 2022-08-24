@@ -11,10 +11,24 @@
       <input type="text" placeholder="Plantas inativas">
     </div>
     <div class="input-group">
-      <input v-model.number="comp" type="number" placeholder="Comprimento">
-      <input v-model.number="larg" type="number" placeholder="Largura">
-      {{area}}
+      <input v-model.number="comp" type="number" placeholder="Comprimento em metros">
+      <input v-model.number="larg" type="number" placeholder="Largura em metros">
     </div>
+<v-row no-gutters>
+        <v-row
+        >
+           <v-btn v-on:click.prevent="calc"
+  elevation="2"
+  x-small
+>calcular</v-btn>
+        </v-row>
+        <br>
+        <v-row
+          class="pa-2"
+        >
+         <p>A area serà: {{area}} m²</p>
+        </v-row>
+    </v-row>
     </form>
 </div>
 </template>
@@ -31,26 +45,26 @@ export default {
     }
   },
   methods: {
-    checkform () {
-      this.area = (this.comp + this.larg) / 2
-      return this.area
+    calc () {
+      this.area = this.comp * this.larg
     }
   }
 }
 </script>
 
 <style scoped>
-.v-btn {
-  background-color: rgba(1, 149, 247, 255);
-  color: aliceblue;
-  display: flex;
-  height: 2rem;
-  font-size: 11px;
-  text-align: center;
+.v-row{
+  margin-left: 2rem;
+   margin-top: 7px;
+   display: flex;
+   align-items: baseline;
 }
-.btn-center{
-    margin-left: 70.5%;
-    margin-top: 1rem;
+.v-btn{
+   background-color: rgba(1, 149, 247, 255);
+   height: 1.5rem;
+   color: aliceblue;
+   font-size: 11px;
+  text-align: center;
 }
 input{
   margin-top: 1rem;

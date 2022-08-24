@@ -44,6 +44,7 @@ export default {
   padding-top: 1%;
    border:solid rgba(216,216,216,255) 1.3px;
     border-radius: 0.1rem;
+    padding-bottom: 1rem;
 }
 .box-bottom{
   margin-top: 1rem;
