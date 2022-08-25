@@ -1,14 +1,14 @@
 <template>
-<div>
+<div class="border">
   <form action="" @submit="checkform">
   <div class="input-group">
       <input type="text" placeholder="Nome">
-      <input type="text" placeholder="Clone">
-      <input type="text" placeholder="Plantas dominadas">
+      <input type="number" placeholder="Clone">
+      <input type="number" placeholder="Plantas dominadas">
     </div>
     <div class="input-group">
-      <input type="text" placeholder="Plantas ativas">
-      <input type="text" placeholder="Plantas inativas">
+      <input type="number" placeholder="Plantas ativas">
+      <input type="number" placeholder="Plantas inativas">
     </div>
     <div class="input-group">
       <input v-model.number="comp" type="number" placeholder="Comprimento em metros">
@@ -53,6 +53,12 @@ export default {
 </script>
 
 <style scoped>
+.border{
+  border:solid rgba(216,216,216,255) 1.3px;
+  border-radius: 0.3rem;
+  margin: 1rem;
+  padding-bottom: 1rem;
+}
 .v-row{
   margin-left: 2rem;
    margin-top: 7px;

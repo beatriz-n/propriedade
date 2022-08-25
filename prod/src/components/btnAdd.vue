@@ -1,24 +1,27 @@
 <template>
+<div>
     <div class="btn-center">
-    <v-btn class="mx-1" fab dark v-on:click="propri" type="submit">
+    <v-btn class="mx-1" fab dark v-on:click="propri=true" type="submit">
       <v-icon dark> mdi-plus </v-icon>
       <p class="text-btn">Plantio</p>
     </v-btn>
     </div>
+    <PlantioComp v-show="propri"></PlantioComp>
+    </div>
 </template>
 <script>
-//  import plantioComp from './plantioComp.vue'
+import PlantioComp from './plantioComp.vue'
 
 export default {
   name: 'btnAdd',
-  methods: {
-    propri () {
-      // this.input.push({
-      //   plantioComp
-      // })
-      this.$router.push({ path: 'plantioComp' })
+  data () {
+    return {
+      propri: false
     }
-  }
+  },
+  methods: {
+  },
+  components: { PlantioComp }
 }
 </script>
 <style scoped>
