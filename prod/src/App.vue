@@ -2,31 +2,27 @@
   <v-app>
     <v-main class="body">
       <v-sheet class="box-container"
-  width="600"
->
-      <h4>Propriedade:</h4>
-<v-sheet
-  color="white"
-  height="400"
-  width="555"
->
-<CamposComp></CamposComp>
-</v-sheet>
-<BtnAdd></BtnAdd>
-</v-sheet>
+              width="600">
+                <h4>Propriedade:</h4>
+                  <v-sheet
+                    color="white"
+                    height="400"
+                    width="555"
+                  >
+                  <CamposComp></CamposComp>
+                  </v-sheet>
+      </v-sheet>
     </v-main>
   </v-app>
 </template>
 
 <script>
 import CamposComp from './components/camposComp.vue'
-import BtnAdd from './components/btnAdd.vue'
 
 export default {
   name: 'App',
   components: {
-    CamposComp,
-    BtnAdd
+    CamposComp
   },
 
   data: () => ({

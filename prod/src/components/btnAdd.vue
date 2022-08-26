@@ -6,13 +6,13 @@
       <p class="text-btn">Plantio</p>
     </v-btn>
     </div>
-    <PlantioComp/>
+    <PlantioComp></PlantioComp>
     <div v-for="box in boxes" :key="box.id" :value="box.tipo">
     </div>
     </div>
 </template>
 <script>
-import PlantioComp from './plantioComp'
+import PlantioComp from './plantioComp.vue'
 
 export default {
   name: 'btnAdd',
@@ -25,9 +25,9 @@ export default {
   methods: {
     propri: function () {
       // alert('aqui')
-      this.boxes.push({
+      /*       this.boxes.push({
         box: this.nextBox++
-      })
+      }) */
     },
     components: { PlantioComp }
   }

@@ -26,11 +26,32 @@
     </v-row>
 </div>
 </div>
+<v-btn class="mx-1" fab dark @click="addRow">
+      <v-icon dark> mdi-plus </v-icon>
+      <p class="text-btn">Plantio</p>
+    </v-btn>
+<div v-for="box in boxes" :key="box.id" :value="box.tipo">
+  <PlantioComp></PlantioComp>
+</div>
 </template>
 <script>
+import PlantioComp from './plantioComp.vue'
+
 export default {
-  name: 'camposComp'
+  name: 'camposComp',
+  components: { PlantioComp },
+  data () {
+    return {
+      boxes: []
+    }
+  },
+  methods: {
+    addRow () {
+      this.boxes.push({ id: '1', nome: '' }) // what to push unto the rows array?
+    }
+  }
 }
+
 </script>
 <style scoped>
 .register{
@@ -107,5 +128,13 @@ input{
 .v-row{
     padding-left: 1rem;
     padding-top: 2rem;
+}
+.v-btn {
+  background-color: rgba(1, 149, 247, 255);
+  color: aliceblue;
+  display: flex;
+  height: 2rem;
+  font-size: 11px;
+  text-align: center;
 }
 </style>
