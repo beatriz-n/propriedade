@@ -1,27 +1,36 @@
 <template>
 <div>
     <div class="btn-center">
-    <v-btn class="mx-1" fab dark v-on:click="propri=true" type="submit">
+    <v-btn class="mx-1" fab dark v-on:click.prevent="propri" type="submit">
       <v-icon dark> mdi-plus </v-icon>
       <p class="text-btn">Plantio</p>
     </v-btn>
     </div>
-    <PlantioComp v-show="propri"></PlantioComp>
+    <PlantioComp/>
+    <div v-for="box in boxes" :key="box.id" :value="box.tipo">
+    </div>
     </div>
 </template>
 <script>
-import PlantioComp from './plantioComp.vue'
+import PlantioComp from './plantioComp'
 
 export default {
   name: 'btnAdd',
   data () {
     return {
-      propri: false
+      boxes: [1, 2, 3],
+      nextBox: ''
     }
   },
   methods: {
-  },
-  components: { PlantioComp }
+    propri: function () {
+      // alert('aqui')
+      this.boxes.push({
+        box: this.nextBox++
+      })
+    },
+    components: { PlantioComp }
+  }
 }
 </script>
 <style scoped>
